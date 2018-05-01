@@ -1,6 +1,6 @@
 # Reagent Design System
 
-Reagent Design System is a library for creating visual Styleguid / Storybook presentation of Reagent components.
+Reagent Design System is a library for creating visual Styleguide / Storybook presentation of Reagent components.
 This library aims to ease the pain for developing front-end component system together with designers.
 
 ### Development mode
