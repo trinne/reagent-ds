@@ -5,12 +5,21 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.9.0"]
+
+                 ;; Yaml
+                 [io.forward/yaml "1.0.8"]
+
+                 ;; Front end
                  [org.clojure/clojurescript "1.10.238"]
                  [reagent "0.8.0"]
                  [stylefy "1.4.2"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-figwheel "0.5.15"]]
+
+  :source-paths ["src/clj" "src/cljs"]
+
+  :main ^:skip-aot reagent-ds.main
 
   :min-lein-version "2.5.0"
   :clean-targets ^{:protect false}
