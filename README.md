@@ -5,6 +5,11 @@ This library aims to ease the pain for developing front-end component system tog
 
 ### Development mode
 
+First thing you need to do is to generate tokens by running the following command in the terminal:
+```
+lein run
+```
+
 To start the Figwheel compiler, navigate to the project folder and run the following command in the terminal:
 
 ```
