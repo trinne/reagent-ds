@@ -9,7 +9,7 @@
 
 aliases:
   primary:
-    value: "210, 100%"
+    value: "110, 100%"
   black:
     value: "0, 0%"
 props:

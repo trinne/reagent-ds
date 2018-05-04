@@ -14,4 +14,3 @@ pom.xml.asc
 /.repl
 *.log
 /.env
-/src/cljs/reagent_ds/tokens
