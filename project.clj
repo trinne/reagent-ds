@@ -1,4 +1,4 @@
-(defproject reagent-ds "0.1.0-SNAPSHOT"
+(defproject reagent-ds "0.0.0.2"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -23,9 +23,9 @@
 
   :min-lein-version "2.5.0"
   :clean-targets ^{:protect false}
-  [:target-path
-   [:cljsbuild :builds :app :compiler :output-dir]
-   [:cljsbuild :builds :app :compiler :output-to]]
+[:target-path
+ [:cljsbuild :builds :app :compiler :output-dir]
+ [:cljsbuild :builds :app :compiler :output-to]]
 
   :resource-paths ["public"]
 
@@ -40,19 +40,19 @@
                         {:main "reagent-ds.dev"
                          :output-to "public/js/app.js"
                          :output-dir "public/js/out"
-                         :asset-path   "js/out"
+                         :asset-path "js/out"
                          :source-map true
                          :optimizations :none
-                         :pretty-print  true}
+                         :pretty-print true}
                         :figwheel
                         {:on-jsload "reagent-ds.core/mount-root"
                          :open-urls ["http://localhost:3449/index.html"]}}
                        :release
                        {:source-paths ["src" "env/prod/cljs"]
                         :compiler
-                        {:output-to "public/js/app.js"
+                        {:output-to "public/js/reagent-ds.js"
                          :output-dir "public/js/release"
-                         :asset-path   "js/out"
+                         :asset-path "js/out"
                          :optimizations :advanced
                          :pretty-print false}}}}
 
