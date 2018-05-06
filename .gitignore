@@ -14,3 +14,6 @@ pom.xml.asc
 /.repl
 *.log
 /.env
+.idea/
+*.iws
+*.iml
