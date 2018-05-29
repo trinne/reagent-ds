@@ -18,7 +18,7 @@
                  [stylefy "1.5.0"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
-            [lein-figwheel "0.5.15"]]
+            [lein-figwheel "0.5.16" :exclusions [org.clojure/clojure]]]
 
   :source-paths ["src/clj" "src/cljs"]
 
