@@ -1,10 +1,13 @@
 (defproject reagent-ds "0.0.0.2"
   :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :url "https://github.com/trinne/velho-ds"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.9.0"]
+
+                 ;; Filesystem support
+                 [me.raynes/fs "1.4.6"]
 
                  ;; Yaml
                  [io.forward/yaml "1.0.8"]
@@ -12,7 +15,7 @@
                  ;; Front end
                  [org.clojure/clojurescript "1.10.238"]
                  [reagent "0.8.0"]
-                 [stylefy "1.4.2"]]
+                 [stylefy "1.5.0"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-figwheel "0.5.15"]]
@@ -37,24 +40,24 @@
   :cljsbuild {:builds {:app
                        {:source-paths ["src/cljs" "env/dev/cljs"]
                         :compiler
-                        {:main "reagent-ds.dev"
-                         :output-to "public/js/app.js"
-                         :output-dir "public/js/out"
-                         :asset-path "js/out"
-                         :source-map true
-                         :optimizations :none
-                         :pretty-print true}
+                                      {:main "reagent-ds.dev"
+                                       :output-to "public/js/app.js"
+                                       :output-dir "public/js/out"
+                                       :asset-path "js/out"
+                                       :source-map true
+                                       :optimizations :none
+                                       :pretty-print true}
                         :figwheel
-                        {:on-jsload "reagent-ds.core/mount-root"
-                         :open-urls ["http://localhost:3449/index.html"]}}
+                                      {:on-jsload "reagent-ds.core/mount-root"
+                                       :open-urls ["http://localhost:3449/index.html"]}}
                        :release
                        {:source-paths ["src/cljs" "env/prod/cljs"]
                         :compiler
-                        {:output-to "public/js/reagent-ds.js"
-                         :output-dir "public/js/release"
-                         :asset-path "js/out"
-                         :optimizations :advanced
-                         :pretty-print false}}}}
+                                      {:output-to "public/js/reagent-ds.js"
+                                       :output-dir "public/js/release"
+                                       :asset-path "js/out"
+                                       :optimizations :advanced
+                                       :pretty-print false}}}}
 
   :aliases {"package" ["do" "clean" ["cljsbuild" "once" "release"]]}
 
