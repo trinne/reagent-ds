@@ -1,7 +1,7 @@
 (ns reagent-ds.core
     (:require [reagent.core :as r]
-              [stylefy.core :as stylefy]
-              [reagent-ds.pages.main :as main]))
+              [reagent-ds.pages.main :as main]
+              [reagent-ds.design-system :as design-system]))
 
 ;; -------------------------
 ;; Navigation
@@ -17,5 +17,5 @@
   (r/render (main/page nav) (.getElementById js/document "app")))
 
 (defn init! []
-  (stylefy/init)
+  (design-system/init-ds!)
   (mount-root))
