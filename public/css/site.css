@@ -4,3 +4,34 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.gen-example {
+    margin: 1rem;
+    /* padding: 0.5rem; */
+    border: 1px solid lightgray;
+    border-radius: 8px 8px 0 0;
+}
+
+.content-example {
+    padding: 1rem;
+}
+
+pre.code-example {
+    background-color: #272822;
+    margin: 0;
+}
+
+pre.code-example:before {
+    content: "Sample code:";
+    background-color: deepskyblue;
+    border-radius: 0 0 8px 0;
+    font-size: 1rem;
+    color: snow;
+    display: inline-block;
+    padding: 2px 10px;
+    font-weight: bold;
+}
+
+pre.code-example code {
+    padding: 1rem;
+}

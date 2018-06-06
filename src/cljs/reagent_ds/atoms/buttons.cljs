@@ -1,24 +1,26 @@
-(ns reagent-ds.atoms.buttons)
+(ns reagent-ds.atoms.buttons
+  (:require [stylefy.core :as stylefy]))
 
-(def button-style {:style {:font-size     "1rem"
-                           :padding       "0.5rem 1rem"
-                           :border        "1px solid rgba(50, 50, 50, .5)"
-                           :border-radius "7%"}})
-(def primary-style {:style {:backgroundColor "rgb(50, 100, 230)"}})
-(def danger-style {:style {:backgroundColor "red"}})
+;; STYLES
+(def style-font {:font-size "24px"
+                 :line-height "1"})
 
-(defn merge-styles [a b]
-  {:style (merge (:style a) (:style b))})
+(def style-button (merge style-font
+                         {}))
 
-(defn button
-  ([content]
-   (button content nil))
-  ([content args]
-   (let [styles (merge-styles button-style args)]
-     [:button styles content])))
+(def style-primary {:background-color "rgb(50, 100, 230)"})
 
-(defn button-primary [content & args]
-  (button content primary-style))
+(def style-danger {:background-color "red"})
 
-(defn button-danger [content & args]
-  (button content danger-style))
+;; COMPONENTS
+(defn button [{:keys [style content]}]
+     [:button (stylefy/use-style (merge style-button style))
+      [:span content]])
+
+(defn button-primary [{:keys [style content]}]
+  [button {:content content
+           :style (merge style-primary style)}])
+
+(defn button-danger [{:keys [style content]}]
+  [button {:content content
+           :style (merge style-danger style)}])
