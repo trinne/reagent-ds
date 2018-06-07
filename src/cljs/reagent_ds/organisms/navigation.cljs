@@ -1,5 +1,7 @@
 (ns reagent-ds.organisms.navigation
-  (:require [stylefy.core :refer [use-style]]))
+  (:require [stylefy.core :refer [use-style]]
+            [reagent-ds.routes :refer [routes]]
+            [bidi.bidi :as bidi]))
 
 ;; Styles
 ;; ----------------
@@ -42,9 +44,9 @@
      (if (map? items)
        (for [key (vec (keys items))]
          (if (pos? (count (key items)))
-           [:li (use-style (li-style level) {:key (nav-key)}) [:a (use-style (a-style level) {:href (str "#" key)}) key]
+           [:li (use-style (li-style level) {:key (nav-key)}) [:a (use-style (a-style level) {:href (bidi/path-for routes key)}) key]
             (get-navigation-items (key items) (inc level))]
-           [:li (use-style (li-style level) {:key (nav-key)}) [:a (use-style (a-style level) {:href (str "#" key)}) key]]))
+           [:li (use-style (li-style level) {:key (nav-key)}) [:a (use-style (a-style level) {:href (bidi/path-for routes key)}) key]]))
        (if (vector? items)
          (for [item items]
            [:li (use-style (li-style level) {:key (nav-key)}) [:a (use-style (a-style level) {:href (str "#" item)}) item]])))]))
